@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/summaries/db" VERSION="20120229" COMMENT="XMLDB file for Moodle mod/summaries"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="summaries" COMMENT="Default comment for summaries, please edit me" NEXT="sig_sumarios">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" COMMENT="Course summaries activity belongs to" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="name field for moodle instances" PREVIOUS="course" NEXT="intro"/>
+        <FIELD NAME="intro" TYPE="text" LENGTH="big" NOTNULL="false" SEQUENCE="false" COMMENT="General introduction of the summaries activity" PREVIOUS="name" NEXT="introformat"/>
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" COMMENT="Format of the intro field (MOODLE, HTML, MARKDOWN...)" PREVIOUS="intro" NEXT="timecreated"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" PREVIOUS="introformat" NEXT="timemodified"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="timecreated"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="course" UNIQUE="false" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="sig_sumarios" COMMENT="Informacao dos sumarios importados do SIGARRA" PREVIOUS="summaries">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" NEXT="uc_sigarra_id"/>
+        <FIELD NAME="uc_sigarra_id" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" PREVIOUS="id" NEXT="shortname"/>
+        <FIELD NAME="shortname" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" PREVIOUS="uc_sigarra_id" NEXT="texto"/>
+        <FIELD NAME="texto" TYPE="text" LENGTH="medium" NOTNULL="false" SEQUENCE="false" PREVIOUS="shortname" NEXT="data_aula"/>
+        <FIELD NAME="data_aula" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" PREVIOUS="texto" NEXT="tipo"/>
+        <FIELD NAME="tipo" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" PREVIOUS="data_aula" NEXT="sigla_turma"/>
+        <FIELD NAME="sigla_turma" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" PREVIOUS="tipo" NEXT="visivel"/>
+        <FIELD NAME="visivel" TYPE="int" LENGTH="1" NOTNULL="false" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" PREVIOUS="sigla_turma" NEXT="n_aula"/>
+        <FIELD NAME="n_aula" TYPE="int" LENGTH="2" NOTNULL="false" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" PREVIOUS="visivel"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

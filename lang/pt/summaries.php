@@ -76,3 +76,4 @@ $string['copy_name'] = 'Copiar para o nome';
 $string['warning_resource'] = 'O sumário foi removido. Será necessário actualizar o recurso.';
 $string['print_formated'] = '{$a}';
 $string['son_shortname']  = 'Código da  sub-unidade';
+$string['summaries:addinstance'] = 'Acicionar novo Sumários SIGARRA';

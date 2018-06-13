@@ -76,3 +76,4 @@ $string['copy_name'] = 'Copy to name';
 $string['warning_resource'] = 'The summary has been removed. Resource needs update.';
 $string['print_formated'] = '{$a}';
 $string['son_shortname']  = 'Child course code';
+$string['summaries:addinstance'] = 'Add a new SIGARRA Summaries';

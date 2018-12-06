@@ -394,6 +394,7 @@ echo $OUTPUT->heading($summaries->name);
 								?>
 						</td>
 					<?php }
+                    next($turmas);
 					$type = key($turmas);
 				}
 			} else {

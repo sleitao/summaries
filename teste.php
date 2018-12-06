@@ -15,7 +15,7 @@
 					<td>Disciplina:</td><td><input type="text" name="shortname"></td>
 				</tr>
                                 <tr>
-                                        <td>Disciplina id:</td><td><input type="text" name="ocorrencia_id"></td>
+                                        <td>Disciplina id:</td><td><input type="text" name="id_sigarra"></td>
                                 </tr>
 				<tr>
 					<td>Sum&aacute;rio:</td><td><input type="text" name="texto"></td>

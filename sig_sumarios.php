@@ -43,7 +43,7 @@ if($_POST['turma_sigla'] != "")
     $class_num = $_POST['turma_sigla'];
 
 // Faz login
-$sum = new sumario($_SERVER['REMOTE_ADDR']);
+$sum = new sumario(get_client_ip());
 
 $conditions = array('uc_sigarra_id' => $uc_sigarra_id, 'data_aula' => $date_time, 'tipo' => $type, 'sigla_turma' => $class_num, 'n_aula' => $n_aula);
 

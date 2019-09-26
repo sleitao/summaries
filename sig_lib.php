@@ -111,5 +111,15 @@ function is_utf8($string) {
         |  \xF4[\x80-\x8F][\x80-\xBF]{2}     # plane 16
     )*$%xs', $string);
   
-} 
+}
+function get_client_ip() {
+    if ($CFG->reverseproxy) {
+    	$ip = $_SERVER['REMOTE_ADDR'];
+    }
+    else {
+	$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	$ip = trim(end(explode(", ",$_SERVER['HTTP_X_FORWARDED_FOR'])));
+    }
+    return $ip;
+}
 ?>

@@ -240,7 +240,7 @@ echo $OUTPUT->heading($summaries->name);
 				<tr>
 					<td align="justify">
 						<div id="summaries" class="box generalbox generalboxcontent boxaligncenter">
-							<?php echo format_text($r->texto); ?>
+							<?php echo format_text(stripslashes($r->texto)); ?>
 						</div>
 					</td>
 				</tr>

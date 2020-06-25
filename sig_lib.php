@@ -113,13 +113,7 @@ function is_utf8($string) {
   
 }
 function get_client_ip() {
-    if ($CFG->reverseproxy) {
-    	$ip = $_SERVER['REMOTE_ADDR'];
-    }
-    else {
-	$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-	$ip = trim(end(explode(", ",$_SERVER['HTTP_X_FORWARDED_FOR'])));
-    }
+	$ip = $_SERVER['REMOTE_ADDR'];
     return $ip;
 }
 ?>

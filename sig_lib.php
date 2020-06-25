@@ -23,7 +23,7 @@ Class sumario {
      * Construtor
      * @param ip da máquina de origem
      **/
-    function sumario($ip)  {
+    function __construct($ip)  {
         if($this->valid_ip($ip)) {
         } else
             die("Não permitido IP $ip");

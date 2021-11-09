@@ -39,8 +39,13 @@ if(!is_utf8($_POST['texto'])) { // se não for, codifica
 
 
 // N.º da turma
-if($_POST['turma_sigla'] != "")
-    $class_num = $_POST['turma_sigla'];
+if($_POST['turma_sigla'] != "") {
+    if(!is_utf8($_POST['turma_sigla'])) { // se não for, codifica
+        $class_num = utf8_encode($_POST['turma_sigla']);
+    } else {
+        $class_num = $_POST['turma_sigla'];
+    }
+}
 
 // Faz login
 $sum = new sumario(get_client_ip());

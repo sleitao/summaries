@@ -50,7 +50,7 @@ if($_POST['turma_sigla'] != "") {
 // Faz login
 $sum = new sumario(get_client_ip());
 
-$conditions = array('uc_sigarra_id' => $uc_sigarra_id, 'data_aula' => $date_time, 'tipo' => $type, 'sigla_turma' => $class_num, 'n_aula' => $n_aula);
+$conditions = array('uc_sigarra_id' => $uc_sigarra_id, 'tipo' => $type, 'sigla_turma' => $class_num, 'n_aula' => $n_aula);
 
 if($sum->isok()) {
     $table = $CFGSIG->prefix . $CFGSIG->table_name;

@@ -64,7 +64,7 @@ Class sumario {
             case 2:
                 if ($DB->record_exists($table, $conditions)) {
                     $dataobject->id = $DB->get_field($table,'id', $conditions);
-                    print_r($conditions); echo " DATAID:$dataobject->id";
+                    //print_r($conditions); echo " DATAID:$dataobject->id";
                     $return = $DB->update_record($table, $dataobject);
                 } else {
                     $return = FALSE;
